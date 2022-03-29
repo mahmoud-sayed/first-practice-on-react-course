@@ -21,11 +21,13 @@ const NewUser = (props) => {
     }
   };
 
-
+  const errorStat = (val) => {
+    setErrorStatus(val);
+  };
 
   return (
     <React.Fragment>
-      {errorStatus === true ? <NegativeNumber /> : ''}
+      {errorStatus === true ? <NegativeNumber errorStatValue={errorStat} /> : ''}
       <Card>
         <div className="new-user-wrapper">
           <NewUserForm onSaveUserData={savedUserData} />
