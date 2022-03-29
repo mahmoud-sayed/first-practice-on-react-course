@@ -8,6 +8,7 @@ const NewUserForm = (props) => {
   const [age, setAge] = useState('');
   const [nameError, setNameError] = useState(false); // to hold name error
   const [ageError, setAgeError] = useState(false); // to hold age error
+  // const [errorPopUp, setErrorPopUp] = useState(false); // to set stats of number if it's less than 0
 
   //to handle add name value
   const nameChangeHandler = (e) => {
@@ -23,9 +24,7 @@ const NewUserForm = (props) => {
     age.length >= 0 ? setAgeError(false) : setAgeError(true);
 
     //check if the age have negative number or not
-    // if (age.trim() <= 0) {
-    //still didn't get how to make it maybe will try to follow something like that https://www.c-sharpcorner.com/article/how-to-create-a-modal-pop-up-in-reactjs-appliaction/
-    // }
+
   };
 
   //handel submit of the form and send it to the parent components 
@@ -57,12 +56,14 @@ const NewUserForm = (props) => {
   };
 
 
+
+
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} >
       <label htmlFor="name" className={nameError === true ? 'error-label' : ''}>User Name</label>
       <input id="name" type="text" onChange={nameChangeHandler} value={name} className={nameError === true ? 'error-input' : ''} />
       <label htmlFor="age" className={ageError === true ? 'error-label' : ''}>Age</label>
-      <input type="number" name="age" id="age" min='1' onChange={ageChangeHandler} value={age} className={ageError === true ? 'error-input' : ''} />
+      <input type="number" name="age" id="age" onChange={ageChangeHandler} value={age} className={ageError === true ? 'error-input' : ''} />
       <button type="submit">Add User</button>
     </form>
   );
