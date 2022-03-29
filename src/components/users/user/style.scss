@@ -1,0 +1,13 @@
+.user-info {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    padding: .5rem 1rem;
+    border: 2px solid #8a8a8a;
+    .user-name {
+        margin: 0;
+    }
+    .user-age {
+        margin: 0;
+    }
+}

@@ -1,0 +1,30 @@
+.error-wrapper {
+    height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    .error-header {
+        height: 50px;
+        background-color: blueviolet;
+        padding: 10px;
+        p {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+        }
+    }
+    .error-body {
+        background-color: #fff;
+        padding-top: 2rem;
+        p {
+            p {
+                color: #000;
+                font-size: 16px;
+                font-weight: 500;
+                margin: 0;
+            }
+        }
+    }
+}
